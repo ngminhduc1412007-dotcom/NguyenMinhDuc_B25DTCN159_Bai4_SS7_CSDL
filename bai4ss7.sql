@@ -4,9 +4,13 @@
 -- đều khiến mệnh đề này không họat động gây ra toàn bộ truy vấn bên ngoài sụp đổ 
 
 -- Câu lệnh đúng
+select course_id
+from Enrollments
+where course_id IS NOT NULL;
+
 select *
 from Courses
-where id not in (
+where id not in(
     select course_id
     from Enrollments
     where course_id is not null
